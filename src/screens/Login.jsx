@@ -15,7 +15,7 @@ export function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://cors-anywhere.vercel.app/http://3.109.201.131:3000/auth/login", {
+      const response = await axios.post("https://www.konkanspecials.com/auth/login", {
         email,
         password,
       });
