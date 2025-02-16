@@ -15,8 +15,11 @@ export function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:3000/login", { email, password });
-      
+      const response = await axios.post("http://3.110.104.206:3000/auth/login", {
+        email,
+        password,
+      });
+      console.log("response ");  
       localStorage.setItem("token", response.data.token);
       dispatch(setToken(response.data.token));
 
@@ -33,7 +36,9 @@ export function Login() {
   return (
     <div className="flex justify-center items-center h-screen w-screen bg-gradient-to-r from-purple-900 via-black to-purple-900 text-white relative">
       <div className="bg-gray-900 bg-opacity-80 p-8 rounded-xl shadow-lg w-96 border border-purple-600">
-        <h1 className="text-4xl font-bold text-center mb-6 text-purple-400 animate-pulse">Login</h1>
+        <h1 className="text-4xl font-bold text-center mb-6 text-purple-400 animate-pulse">
+          Login
+        </h1>
 
         <form onSubmit={handleSubmit}>
           <input
@@ -61,7 +66,10 @@ export function Login() {
         {/* Register Link */}
         <p className="mt-4 text-center text-sm">
           Don’t have an account?{" "}
-          <Link to="/register" className="text-purple-400 hover:text-purple-300 transition-all duration-200">
+          <Link
+            to="/register"
+            className="text-purple-400 hover:text-purple-300 transition-all duration-200"
+          >
             Register here
           </Link>
         </p>
@@ -75,7 +83,9 @@ export function Login() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 50, opacity: 0 }}
             className={`fixed bottom-5 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg text-lg font-semibold ${
-              message.type === "success" ? "bg-green-500 text-black" : "bg-red-500 text-white"
+              message.type === "success"
+                ? "bg-green-500 text-black"
+                : "bg-red-500 text-white"
             }`}
           >
             {message.text}
