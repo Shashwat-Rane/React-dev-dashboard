@@ -1,13 +1,13 @@
+import axios from "axios";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { Link } from "react-router-dom";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import { useState } from "react";
-import axios from "axios";
 export function Register() {
-  const [formData, setFormData] = useState({ name: "", email: "", password: "", age: "", country: "" });
+  
+  const [formData, setFormData] = useState({ firstName: "", email: "", password: "", age: "", country: "" });
   const [registered, setRegistered] = useState(false);
   const navigate = useNavigate();
   const [message, setMessage] = useState({ text: "", type: "" });
@@ -19,7 +19,7 @@ export function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:000/register", formData);
+      await axios.post("http://3.110.104.206:3000/auth/register", formData);
       setRegistered(true); // Show success animation
       setTimeout(() => navigate("/login"), 2000); // Redirect after 2 seconds
     } catch (error) {
