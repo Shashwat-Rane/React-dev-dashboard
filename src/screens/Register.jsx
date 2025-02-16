@@ -19,7 +19,7 @@ export function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://3.110.104.206:3000/auth/register", formData);
+      await axios.post("https://3.110.104.206:3000/auth/register", formData);
       setRegistered(true); // Show success animation
       setTimeout(() => navigate("/login"), 2000); // Redirect after 2 seconds
     } catch (error) {
