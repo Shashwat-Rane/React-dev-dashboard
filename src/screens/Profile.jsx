@@ -10,7 +10,7 @@ export function Profile() {
   
     useEffect(() => {
       if (token) {
-        fetch("https://3.110.104.206:3000/user/profile", {
+        fetch("https://www.konkanspecials.com/user/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
