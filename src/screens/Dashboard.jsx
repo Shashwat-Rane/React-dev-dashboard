@@ -13,7 +13,7 @@ export function Dashboard() {
   }, []);
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-r from-purple-900 via-black to-purple-900 text-white flex flex-col">
+    <div className="min-h-screen w-screen bg-gradient-to-r from-purple-900 via-black to-purple-900 text-white flex flex-col">
       {/* Main Content */}
       <div className="flex flex-col items-center justify-center flex-grow px-6 text-center">
         <motion.h1
@@ -29,27 +29,6 @@ export function Dashboard() {
           with other gamers.
         </p>
 
-        {/* Buttons Section */}
-        {/* <div className="mt-8 flex flex-wrap justify-center gap-6">
-          <button
-            onClick={() => navigate("/page-one")}
-            className="px-6 py-3 text-black bg-blue-600 hover:bg-blue-800 rounded-xl text-lg transition-all"
-          >
-            Top AR Games
-          </button>
-          <button
-            onClick={() => navigate("/page-two")}
-            className="px-6 py-3 text-black bg-gray-700 hover:bg-gray-900 rounded-xl text-lg transition-all"
-          >
-            Top VR Tech
-          </button>
-          <button
-            onClick={() => navigate("/profile")}
-            className="px-6 py-3 text-black bg-gray-700 hover:bg-gray-900 rounded-xl text-lg transition-all"
-          >
-            Profile
-          </button>
-        </div> */}
       </div>
 
       {/* Featured Sections */}
