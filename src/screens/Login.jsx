@@ -25,10 +25,10 @@ export function Login() {
 
       setMessage({ text: "Login Successful! Redirecting...", type: "success" });
 
-      setTimeout(() => navigate("/dashboard"), 2000);
+      setTimeout(() => navigate("/dashboard"), 1000);
     } catch (error) {
       console.log(error);
-      setMessage({ text: "Login Failed! Try Again.", type: "error" });
+      setMessage({ text: "You Don't Have An Account! Please Register.", type: "error" });
       setTimeout(() => setMessage({ text: "", type: "" }), 3000);
     }
   };
